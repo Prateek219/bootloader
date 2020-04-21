@@ -13,7 +13,7 @@ We would be using the AVR Butterfly Bootloader. For programming using the
 Bootloader we would be using AVRDude which is part of the WinAVR package.
 Instructions for setting up the main.c and makefile are also given in the readme file. 
 
-1.Select the MCU type to be used.
+1. Select the MCU type to be used.
 
 2. Keep the bootloader size t its default 512 words.
 
