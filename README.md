@@ -31,3 +31,9 @@ variables. Set the pin in BLPNUM variable and corresponding PORT, DDR and PIN
 values in BLPORT, BLDDR and BLPNUM variables correspondingly. If the startpin is
 not satisfied then the program already stored in flash memory is run.
 
+   * START_WAIT: In this mode the MCU waits for a specified time for incoming data. If
+data is received the flash memory is written according to commands received. After
+the timeout, the program already stored in flash memory is run. The timeout value
+can be set by the WAIT_VALUE variable(the variable stores the number of 10 ms
+steps)
+
