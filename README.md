@@ -23,7 +23,7 @@ Instructions for setting up the main.c and makefile are also given in the readme
 
 5. Now select the startup mode. 
  
- * START_SIMPLE: In this mode the MCU checks the start condition on reset. The start
+   * START_SIMPLE: In this mode the MCU checks the start condition on reset. The start
 condition is a given pin been grounded. If the start condition is satisfied the the MCU
 starts listening through UART and programs the flash according to commands
 received. The startpin can be set by the BLPORT, BLDDR, BLPIN and BLPNUM
