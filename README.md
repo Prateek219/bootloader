@@ -37,3 +37,37 @@ the timeout, the program already stored in flash memory is run. The timeout valu
 can be set by the WAIT_VALUE variable(the variable stores the number of 10 ms
 steps)
 
+ 6. Now make the file by running Command Prompt. Go to the folder and execute make
+command. The HEX file would be generated. If some changes are to be made in the source
+file after generating HEX file first run make clean which deletes the present HEX files and
+then run make.
+ 7. Program the bootloader to the MCU. Program the "Boot Flash section size" (BOOTSZ fuses)
+according to the boot-size selected in the makefile i.e. BOOTSZ=00 for boot-size 1024
+words on ATmega16. Enable the Boot Reset Vector fuse ie BOOTRST=0.
+ 8. Now reset the MCU, fulfilling the start condition.
+ 9. Start avrdude.
+ 
+ ## AVRDude INTERFACE:
+ Type avrdude –h to get a list of commands and options.
+ 
+To program the MCU type the following command:
+
+avrdude –p <mcu_type> -c butterfly –P <com_port> -b <baud_rate> -U
+
+<memory_type>:w:<filename>.hex
+ 
+<mcu_type>
+
+m8 for ATMEGA8, m16 for ATMEGA16 and so on.
+
+<memory_type>
+
+Use flash for programming to the flash memory eeprom for writing the EEPROM memory.
+
+Remember to set the Baud rate if non- standard RS-232 baud rate is being used or AVRDude will be
+unable to connect.
+
+To run the program reset the MCU. If START_SIMPLE is being used now set the startpin which was
+grounded earlier to live. This passes the control to the application flash section and the program
+loaded in the application flash memory is run. If START_WAIT mode is being used the MCU
+automatically runs the program stored in application flash memory. 
